@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <div class="card mb-4">
+        <h1>All categories</h1>
+
+        {% if category_list %}
+            <ul>
+
+                {% for category in category_list %}
+                    <li>
+                        <a href="{{ category.get_absolute_url }}">{{ category.name }}</a>
+                    </li>
+                {% endfor %}
+
+            </ul>
+        {% else %}
+            <p>There are no category.</p>
+        {% endif %}
+    </div>
+{% endblock %}

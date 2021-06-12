@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+    <div class="card mb-4">
+        <h1>All tags</h1>
+
+        {% if tag_list %}
+            <ul>
+
+                {% for tag in tag_list %}
+                    <li>
+                        <a href="{{ tag.get_absolute_url }}">{{ tag.name }}</a>
+                    </li>
+                {% endfor %}
+
+            </ul>
+        {% else %}
+            <p>There are no tag.</p>
+        {% endif %}
+    </div>
+
+{% endblock %}

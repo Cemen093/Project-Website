@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+    <div class="card mb-4">
+        <h1>All authors</h1>
+
+        {% if author_list %}
+            <ul>
+
+                {% for author in author_list %}
+                    <li>
+                        <a href="{{ author.get_absolute_url }}">{{ author.last_name }} {{ author.first_name }}</a>
+                    </li>
+                {% endfor %}
+
+            </ul>
+        {% else %}
+            <p>There are no author.</p>
+        {% endif %}
+    </div>
+
+{% endblock %}
